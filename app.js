@@ -1,8 +1,5 @@
 require("dotenv").config();
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 3000;
-}
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -122,7 +119,10 @@ app.post("/", async(req,res)=>{
 
 
 
-
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
 
 
 app.listen(port, function() {
